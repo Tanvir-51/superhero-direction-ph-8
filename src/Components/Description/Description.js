@@ -4,17 +4,23 @@ import "./Description.css";
 
 const Description = () => {
   const [infos, setInfos] = useState([]);
+
   useEffect(() => {
     fetch("./companies.json")
       .then((res) => res.json())
       .then((data) => setInfos(data));
   }, []);
+
+  const addToCart = (info) => {
+    console.log(info.name);
+  };
+
   return (
     <div className="container description-container mt-3 ">
       <div className="tech-container">
         {/* <h3>Tech: {infos.length}</h3> */}
         {infos.map((info) => (
-          <Info info={info}></Info>
+          <Info key={info.name} info={info} addToCart={addToCart}></Info>
         ))}
       </div>
       <div className="cart-container">

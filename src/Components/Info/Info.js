@@ -4,7 +4,7 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import "./Info.css";
 
 const Info = (props) => {
-  console.log(props.info);
+  //   console.log(props);
   const { name, ceo, founded, headquarters, net_worth, image } = props.info; //destructuring info
   return (
     <div className="info-container">
@@ -16,7 +16,10 @@ const Info = (props) => {
           <h4>Founded:{founded}</h4>
           <h4>Headquarters:{headquarters}</h4>
           <h4>Net Worth: {net_worth}</h4>
-          <button className="btn btn-primary">
+          <button
+            onClick={() => props.addToCart(props.info)}
+            className="btn btn-primary"
+          >
             <FontAwesomeIcon icon={faShoppingCart} /> Add to Cart
           </button>
         </div>
