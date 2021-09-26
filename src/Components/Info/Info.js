@@ -4,7 +4,6 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import "./Info.css";
 
 const Info = (props) => {
-  //   console.log(props);
   const { name, ceo, founded, headquarters, net_worth, image } = props.info; //destructuring info
   return (
     <div className="info-container">
